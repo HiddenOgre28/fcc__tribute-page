@@ -1,6 +1,197 @@
+// Variables //
 // Page color palette //
 $primary-color: rgb(255, 255, 255);
 $secondary-color: rgb(45, 91, 92);
+$main-font: "Lucida Handwriting", cursive;;
+$secondary-font: Verdana, Geneva, Tahoma, sans-serif;
+
+// Reusable code //
+@mixin flexContainer($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
 
 // Mobile first //
 // Base //
+
+body {
+    background-color: $primary-color;
+    margin: 0px;
+}
+
+p {
+    color: $primary-color;
+}
+
+dl {
+    color: $primary-color;
+}
+
+img {
+    max-width: 100%;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1em;
+    font-family: $secondary-font;
+    color: $primary-color;
+    margin: 5% auto;
+}
+
+a {
+    color: $primary-color;
+
+    &:hover {
+        color: blue;
+    }
+
+    &:visited {
+        color: black;
+    }
+}
+
+// Layout//
+.main {
+    @include flexContainer(column, none, none);
+    background-color: $primary-color;
+}
+
+.header {
+    background-color: $primary-color;
+    width: 100%;
+    height: auto;
+    @include flexContainer(row, flex-start, flex-start);
+}
+
+.contentWrap {
+    background-color: $secondary-color;
+    width: 100%;
+    height: auto;
+    @include flexContainer(row, flex-start, center);
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: $primary-color;
+    height: auto;
+    width: 100%;
+    @include flexContainer(row, center, center);
+}
+
+// Modules //
+// Header modules //
+.header__img {
+    width: auto;
+    height: auto;
+}
+
+.header__title {
+    margin: 0.5em 0 0.5em 0.5em;
+    padding: 0.5em 0 0.5em 0.5em;
+    font-size: 3.125em;
+    font-family: $main-font;
+    color: $secondary-color;
+}
+
+// Footer modules //
+.footer__container {
+    flex: 1;
+
+    &__title {
+        color: $secondary-color;
+        font-weight: bold;
+        margin: 2% auto;
+        text-align: center;
+        font-size: 1.25em;
+    }
+
+    &__links {
+        margin: 1% auto;
+        font-size: 1.1em;
+
+        &__bullet {
+            width: 50%;
+            height: auto;
+            text-align: left;
+            margin: 0 auto 0 34%;
+        }
+    }
+}
+
+.footer__credits {
+    color: $primary-color;
+    flex: 2;
+    border-left: solid $secondary-color;
+    border-right: solid $secondary-color;
+
+    &__img {
+        display: block;
+        margin: 3% auto 1% auto;
+        width: 100vm;
+        height: 25vh;
+    }
+
+    &__p {
+        text-align: center;
+        margin: 1% auto;
+        color: $secondary-color;
+        font-weight: bold;
+        font-size: 1.1875em;
+    }
+}
+
+// Content modules //
+.contentWrap__portrait {
+    flex: 1;
+    margin: .9% auto;
+    position: sticky;
+    top: 0px;
+
+    &__img {
+        display: block;
+        width: 85%;
+        height: auto;
+        margin: 1% auto;
+        border: solid $primary-color;
+    }
+}
+
+.contentWrap__info {
+    flex: 3;
+    color: $primary-color;
+    margin: 0 auto;
+    padding: 1%;
+
+    &__title {
+        font-size: 1.8em;
+        font-family: $secondary-font;
+        margin: 0 auto;
+    }
+
+    &__p {
+        text-align: justify;
+        font-size: 1.25em;
+    }
+
+    &__imgContainer__img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.contentWrap__imgContainer {
+    flex: 1;
+    margin: 1% auto;
+    @include flexContainer(column, center, center);
+    
+    &__img {
+        display: block;
+        width: 90%;
+        height: auto;
+        margin: 3% auto;
+        border: solid $primary-color;
+    }
+}
