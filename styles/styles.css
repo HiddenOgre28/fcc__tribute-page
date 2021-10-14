@@ -25,7 +25,7 @@ figcaption {
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 a:hover {
@@ -213,6 +213,7 @@ a:visited {
 }
 
 .contentWrap__info__imgContainer__img {
+  display: block;
   width: 100%;
   height: auto;
 }
