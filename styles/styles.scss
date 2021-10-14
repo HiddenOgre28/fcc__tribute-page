@@ -13,12 +13,13 @@ $secondary-font: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: $justify;
 }
 
-// Mobile first //
+// Desktop //
 // Base //
 
 body {
     background-color: $primary-color;
     margin: 0px;
+    max-width: 100%;
 }
 
 p {
@@ -193,5 +194,67 @@ a {
         height: auto;
         margin: 3% auto;
         border: solid $primary-color;
+    }
+}
+
+// Mobile //
+@media screen and (max-device-width: 425px) {
+    // Layout //
+    .main {
+        @include flexContainer(column, center, center);
+    }
+
+    .header {
+        @include flexContainer(column, center, center);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contentWrap {
+        @include flexContainer(column, flex-start, center);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        @include flexContainer(column, center, center);
+        max-width: 100%;
+        height: auto;
+    }
+
+    // Modules //
+    // Header modules //
+    .header__img {
+        width: 70%;
+        height: auto;
+        margin: 1% auto;
+    }
+    
+    .header__title {
+        font-size: 1.7em;
+        margin: 0 auto;
+    }
+
+    // Footer modules //
+    .footer__container {
+        margin: 1% auto;
+    }
+
+    .footer__credits {
+        margin: 1% auto;
+        border-left: none;
+        border-right: none;
+        border-top: solid $secondary-color;
+        border-bottom: solid $secondary-color;
+    }
+
+    // Content modules //
+    .contentWrap__portrait {
+        position: relative;
+    
+        &__img {
+            width: 80%;
+            height: auto;
+        }
     }
 }

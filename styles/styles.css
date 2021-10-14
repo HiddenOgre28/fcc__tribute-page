@@ -1,6 +1,7 @@
 body {
   background-color: white;
   margin: 0px;
+  max-width: 100%;
 }
 
 p {
@@ -242,5 +243,100 @@ a:visited {
   height: auto;
   margin: 3% auto;
   border: solid white;
+}
+
+@media screen and (max-device-width: 425px) {
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 100%;
+    height: auto;
+  }
+  .contentWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 100%;
+    height: auto;
+  }
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 100%;
+    height: auto;
+  }
+  .header__img {
+    width: 70%;
+    height: auto;
+    margin: 1% auto;
+  }
+  .header__title {
+    font-size: 1.7em;
+    margin: 0 auto;
+  }
+  .footer__container {
+    margin: 1% auto;
+  }
+  .footer__credits {
+    margin: 1% auto;
+    border-left: none;
+    border-right: none;
+    border-top: solid #2d5b5c;
+    border-bottom: solid #2d5b5c;
+  }
+  .contentWrap__portrait {
+    position: relative;
+  }
+  .contentWrap__portrait__img {
+    width: 80%;
+    height: auto;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
